@@ -8,7 +8,7 @@ Use the **yum_package** resource to install, upgrade, and remove packages with Y
 
 .. end_tag
 
-.. note:: Support for using file names to install packages (as in ``yum_package "/bin/sh"``) is not available because the volume of data required to parse for this is excessive.
+.. note:: Support for using file names to install packages (as in ``yum_package "/bin/sh"``) is not available because the volume of data required to parse for this is large.
 
 .. note:: .. tag notes_resource_based_on_package
 
