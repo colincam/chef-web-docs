@@ -344,8 +344,6 @@ and returns output similar to:
 
 **Initialize project with GitHub repository**
 
-.. tag ctl_delivery_init_github_project
-
 To initialize a project using a GitHub repository, run a command similar to:
 
 .. code-block:: bash
@@ -386,8 +384,6 @@ and returns output similar to:
    }
    Git add and commit delivery config: done
    Push add-delivery-config branch and create Pull Request
-
-.. end_tag
 
 **Add build-cookbook from private Supermarket**
 

@@ -197,8 +197,6 @@ You may integrate Chef Automate and GitHub Enterprise or https://github.com/. If
 
 Add Users
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
-.. tag delivery_integration_github_add_linked_users
-
 You must associate a GitHub user with a Chef Automate user in order to successfully create changes from GitHub pull requests.
 
 To onboard a user for an integrated GitHub Enterprise project or one that is hosted at https://github.com/:
@@ -241,8 +239,6 @@ Note the following constraints:
 
 * You may not link two GitHub accounts to a single Chef Automate user.
 * Two users may not share a GitHub account
-
-.. end_tag
 
 Submit Changes
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
