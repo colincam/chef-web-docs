@@ -17,7 +17,7 @@ A chef-client is an agent that runs locally on every node that is under manageme
 
 .. note:: The chef-client executable can be run as a daemon.
 
-Node Types 2
+Node Types 1
 =====================================================
 
 .. tag node
