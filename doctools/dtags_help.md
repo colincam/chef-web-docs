@@ -117,8 +117,9 @@ has the following effect. If mydoc.rst line 43 contains ".. tag foo",
 then the body of all foo tags in yourdoc.rst will be replaced with the
 text taken from the foo tag located in mydoc.rst at line 43.
 
-Note: `<topic>` and `<topic2>` cannot name the same file in the current
-version of the tool. For now, if you've used the same tag inconsistently within a
+Note: If you've used the same tag more than once but with different
+body definitions within `<topic>`, then `dtags` will give an
+error. For now, if you've used the same tag inconsistently within a
 single file, you'll need to resolve the conflict by editing the file.
 
 ## dtags whereis
