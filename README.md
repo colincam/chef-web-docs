@@ -12,13 +12,13 @@ When you're in the topic you want to change, click on that page's pencil icon an
 
 We no longer use "swaps" and include files, so you'll be able to see all of text in one place for each topic. If you need tips on the source language, check out these [instructions](https://docs.chef.io/style_guide.html). 
 
-When you're done editing, press the "Propose file change" button at the bottom of the page and confirm your pull request. Our CI system will check for errors and add an comment to your PR with the results.
+When you're done editing, press the "Propose file change" button at the bottom of the page and confirm your pull request. The CI system will check for errors and add an comment to your PR with the results.
 
 The Chef docs team can normally merge pull requests within a day or two, unless there are complications like build errors that might add a few more days.
 
 ## The next fastest way
 
-If your change involves edits to multiple topics, or if you contribute frequently, you'll want to fork this repo in GitHib, clone it on your workstation, and make pull requests from commits you push to your forked repo. After you fork using the GitHub web site, clone the forked repo with:
+If your change involves edits to multiple topics, or if you contribute frequently, you'll want to fork this repo in GitHib, clone it on your workstation, and make pull requests from commits you push to your forked repo. After you fork using the GitHub web interface, clone the forked repo with:
 
 ```bash
     git clone https://github.com/<your-github-id>/chef-web-docs.git
@@ -54,10 +54,10 @@ We love getting feedback. You can use:
 
 [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/)
 
-## Archive
+## Archive of pre-2016 commit history
 
-Commit history of this repo prior to February 12, 2016 has been archived to the chef/chef-web-docs-2016 to save space. No changes to the archive repo will be merged; it's just for historical purposes.
+Commit history of this repo prior to February 12, 2016 has been archived to the chef/chef-web-docs-2016 repo to save space. No changes to the archive repo will be merged; it's just for historical purposes.
 
 ## Questions?
 
-Open an [Issue](https://github.com/chef/chef-web-docs/issues) and ask. Or send email to docs@chef.io.
+Open an [issue](https://github.com/chef/chef-web-docs/issues) and ask. Or send email to docs@chef.io.
