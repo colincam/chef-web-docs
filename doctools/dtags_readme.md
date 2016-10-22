@@ -79,9 +79,8 @@ hard.
 ## Keep reusable text but get rid of include files 
 
 We think the solution is to get rid of include files but keep the idea
-of structured, shared content. All that was needed was a bit of new
-tooling to make it practical to manage the shared blocks of text
-without using include files.
+of structured, shared content. All that's needed is a bit of tooling
+to make it practical to manage the shared blocks of text inline.
 
 Our tool is called `dtags` and it gets rid of include files but
 retains the ability to reuse content.
@@ -130,7 +129,7 @@ single change.
 This turns out not to be a hard problem. It's the kind of problems
 that computers are very good at.
 
-What als makes the problem easy is that nowadays we use version
+What also makes the problem easy is that nowadays we use version
 control systems like `git` and workflow automation from systems like
 GitHub and Chef Automate. It's possible to make consistency of shared
 regions an automatically enforced condition of the merge into the
@@ -293,7 +292,9 @@ problem. We can fix that glitch by "unstaging" `A.rst` and putting
 ```
 git reset HEAD A.rst
 git add A.rst
+dtags replicate -- A.rst
 ```
+All fixed! The `--` value is a placeholder that says to replicate all tags found in the given topic.
 
 The final step is to make sure all of the tagged regions are
 consistent and commit our changes and push them to the repo used for

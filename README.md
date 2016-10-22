@@ -1,12 +1,8 @@
 # chef-web-docs
 
-This repo is the source of the Chef referenced documentation located at https://docs.chef.io/
-
-Here's how to contribute. 
+This repo is the source of the Chef reference documentation located at https://docs.chef.io/
 
 On October 24, 2016, it became much easier to contribute to Chef reference documentation. For each topic, you now only have to make edits to a single file that looks a lot like the final HTML. 
-
-NOTE: Commit history of this repo prior to February 12, 2016 has been archived to the chef/chef-web-docs-2016 to save space. No changes to the archive repo will be merged; it's just for historical purposes.
 
 ## The fastest way to contribute
 
@@ -22,7 +18,7 @@ The Chef docs team can normally merge pull requests within a day or two, unless 
 
 ## The next fastest way
 
-If your change involves edits to multiple topics, or if you make changes frequently, you'll want to fork this repo in GitHib, clone it on your workstation, and make pull requests from commits you push to your forked repo. To clone, use
+If your change involves edits to multiple topics, or if you contribute frequently, you'll want to fork this repo in GitHib, clone it on your workstation, and make pull requests from commits you push to your forked repo. To clone, use
 
 ```bash
     git clone https://github.com/chef/chef-web-docs.git
@@ -57,6 +53,10 @@ We love getting feedback. You can use:
 ## License
 
 [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/)
+
+## Archive
+
+Commit history of this repo prior to February 12, 2016 has been archived to the chef/chef-web-docs-2016 to save space. No changes to the archive repo will be merged; it's just for historical purposes.
 
 ## Questions?
 

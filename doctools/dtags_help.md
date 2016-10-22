@@ -20,6 +20,8 @@ indentation, and the body must have at least that indentation.
 * The ``tag`` line should be followed by a blank line.
 * The ``end_tag`` line should be preceded by a blank line.
 * The name that follows ``tag`` must use only lowercase letters, digits and the underscore character.
+* It's ok for tagged regions to be nested.
+* We recommend that you use tags only for content that appears in more than one place.
 
 Note that `.. tag` and `.. tag_end` are comments in
 restructuredText. They are ignored by the Sphinx documentation
