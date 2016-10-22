@@ -126,7 +126,7 @@ source files at the same time, and it's not reasonable to require
 manual edits to multiple files when making what is conceptually a
 single change.
 
-This turns out not to be a hard problem. It's the kind of problems
+This turns out not to be a hard problem. It's the kind of problem
 that computers are very good at.
 
 What also makes the problem easy is that nowadays we use version

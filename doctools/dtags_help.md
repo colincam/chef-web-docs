@@ -169,7 +169,7 @@ The results are in alphabetical order.
 
 Usage: 
 ```
-  dtags print (`<regexp> | "--") [`<topic> [`<topic2>]]
+  dtags print (<regexp> | "--") [`<topic> [`<topic2>]]
 ```
 
 The `dtags print` command writes the contents of matching tags matching
