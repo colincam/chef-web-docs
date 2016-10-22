@@ -47,7 +47,7 @@ We love getting feedback. You can use:
 
 * Email --- Send an email to docs@chef.io for documentation bugs, ideas, thoughts, and suggestions. This email address is not a support email address, however. If you need support, contact Chef support.
 * Pull request --- Submit a PR to this repo using either of the two methods described above.
-* GitHub issues --- Use the https://github.com/chef/chef/issues page for issues specific to Chef itself. This is a good place for "important" documentation bugs that may need visibility among a larger group, especially in situations where a doc bug may also surface a product bug.
+* GitHub issues --- Use the https://github.com/chef/chef/issues page for issues specific to Chef itself. This is a good place for "important" documentation bugs that may need visibility among a larger group, especially in situations where a doc bug may also surface a product bug. You can also use [chef-web-docs issues](https://github.com/chef/chef-web-docs/issues), especially for docs feature requests and minor docs bugs.
 * https://discourse.chef.io/ --- This is a great place to interact with Chef and others.
 
 ## License
