@@ -17,7 +17,7 @@ files. In the Sphinx documentation generator for restructuredText
 there is a directive `.. include::` to bring in shared content from
 another file. Here's an example:
 
-`foo.rst`
+`A.rst`
 ```rst
    Foo
    =======================================
@@ -35,9 +35,9 @@ The file `../../includes/about_foo.rst` contains the reusable content:
 **Foo** does lots of things.
 ```
 Of course, the whole point is that `../../includes/about_foo.rst`
-can appear in lots of places, for example, in `bar.rst`:
+can appear in lots of places, for example, in `B.rst`:
 
-`bar.rst`
+`B.rst`
 ```rst
    **Enterprise Foo** is based on Foo.
    
@@ -76,12 +76,12 @@ TL;DR. Include files get out of hand quickly and can make the entire
 process of writing and maintaining structured documentation very
 hard.
 
-## Solution: Keep reusable text but get rid of include files 
+## Keep reusable text but get rid of include files 
 
 We think the solution is to get rid of include files but keep the idea
-of structured, shared content. We had to write a bit of tooling to
-make it practical to manage the shared blocks of text without using
-include files.
+of structured, shared content. All that was needed was a bit of new
+tooling to make it practical to manage the shared blocks of text
+without using include files.
 
 Our tool is called `dtags` and it gets rid of include files but
 retains the ability to reuse content.
@@ -90,7 +90,7 @@ All you need to do is maintain inline comments that tag regions of
 content as being reused. The restructuredText from the previous
 example becomes:
 
-`foo.rst`
+`A.rst`
 ```rst
    Foo
    =======================================
@@ -108,7 +108,7 @@ example becomes:
 
 and
 
-`bar.rst`
+`B.rst`
 ```rst
    **Enterprise Foo** is based on Foo.
    
@@ -127,29 +127,28 @@ source files at the same time, and it's not reasonable to require
 manual edits to multiple files when making what is conceptually a
 single change.
 
-This turns out not to be a hard problem. All you need is something
-like the `dtags` command line tool to analyze and replicate changes
-to tagged regions.
+This turns out not to be a hard problem. It's the kind of problems
+that computers are very good at.
 
-What makes the problem easy is that nowadays we use version control
-systems like `git` and workflow automation from systems like GitHub
-and Chef Automate. It's possible to make consistency of shared regions
-an automatically enforced condition of the merge into the master
-branch. A user can safely experiment with tool-generated changes to
-content without endangering the changes they've made by hand but have
-not yet published.
+What als makes the problem easy is that nowadays we use version
+control systems like `git` and workflow automation from systems like
+GitHub and Chef Automate. It's possible to make consistency of shared
+regions an automatically enforced condition of the merge into the
+master branch. A user can safely experiment with tool-generated
+changes to content without endangering the changes they've made by
+hand but have not yet published.
 
 To understand this how this works, let's look at the `dtags` workflow.
 
 ## Suggested workflow
 
-Continuing with the example of `foo.rst` and `bar.rst` that share one
+Continuing with the example of `A.rst` and `B.rst` that share one
 region of text using the `foo_summary` tag, suppose that we decide to
 update the shared text. We can do this by editing either file, but
-let's say that `foo.rst` is the one that we want to work on. Here's our
+let's say that `A.rst` is the one that we want to work on. Here's our
 change:
 
-`foo.rst`
+`A.rst`
 ```rst
    Foo
    =======================================
@@ -175,17 +174,17 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   foo.rst
+	modified:   A.rst
 ```
 
 We can review the change by looking at diffs.
 
 ```bash
 git diff 
-diff --git a/src/examples/foo.rst b/src/examples/foo.rst
+diff --git a/src/examples/A.rst b/src/examples/A.rst
  index 8e7ea54..3d5a97a 100644
- --- a/src/examples/foo.rst
- +++ b/src/examples/foo.rst
+ --- a/src/examples/A.rst
+ +++ b/src/examples/A.rst
  @@ -5,7 +5,7 @@
 
     .. tag foo_summary
@@ -210,7 +209,7 @@ staging area for changes prior to commiting them. The `git add`
 command is what we want.
 
 ```
-git add foo.rst 
+git add A.rst 
 git status
 
 On branch master
@@ -218,7 +217,7 @@ Your branch is up-to-date with 'origin/master'.
 
 Changes to be committed:
  (use "git reset HEAD <file>..." to unstage)
-modified:   foo.rst
+modified:   A.rst
 ```
 
 Now we're ready to use `dtags` to analyze the impact of changes to
@@ -229,8 +228,9 @@ We start by running the `dtags check` subcommand.
 ```
 dtags check
 Inconsistent tagged regions:
-  foo_summary e8ae754 foo.rst:6
-  foo_summary 5a93da7 bar.rst:3
+  foo_summary e8ae754 A.rst:6
+
+  foo_summary 5a93da7 B.rst:3
 ```
 The `dtags` tool compares the tags across the doc set (the current working
 directory) and reports inconsistencies.
@@ -242,13 +242,13 @@ We can apply the changes to all or part of the documentation set
 in our working set with the `dtags replicate` subcommand.
 
 ```
-dtags replicate foo_summary foo.rst
+dtags replicate foo_summary A.rst
 
-  tag foo_summary 5a93da7 -> e8ae754 bar.rst:3
+  tag foo_summary 5a93da7 -> e8ae754 B.rst:3
 ```
 
-Typing `dtags replicate foo_summary foo.rst` had the effect of
-propagating the `foo_summary` tagged region found in the `foo.rst`
+Typing `dtags replicate foo_summary A.rst` had the effect of
+propagating the `foo_summary` tagged region found in the `A.rst`
 file to the rest of the source files in the doc set. (There are other
 options for using `dtags replicate`.)
 
@@ -262,37 +262,37 @@ Your branch is up-to-date with 'origin/master'.
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-	modified:   foo.rst
+	modified:   A.rst
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   bar.rst
+	modified:   B.rst
 
 ```
 
-This tells us that `foo.rst` is still safely tucked away in the index
-and `bar.rst` has been modified. We say "safely" because if we had
-made a mistake with the `dtags` tool and modified `foo.rst` by
+This tells us that `A.rst` is still safely tucked away in the index
+and `B.rst` has been modified. We say "safely" because if we had
+made a mistake with the `dtags` tool and modified `A.rst` by
 accident, the edits we had made by hand would still be safe.
 
-For example, let's say that we had mistakenly replicated `bar.rst`'s
+For example, let's say that we had mistakenly replicated `B.rst`'s
 version of the `foo_summary` tagged region.
 
 ```
-dtags replicate foo_summary bar.rst
+dtags replicate foo_summary B.rst
 
-  tag foo_summary e8ae754 -> 5a93da7 foo.rst:6
+  tag foo_summary e8ae754 -> 5a93da7 A.rst:6
 ```
 
 Oops, we just overwrote our changes with the old text! This isn't a
-problem. We can fix that glitch by "unstaging" `foo.rst` and putting
-`foo.rst` back in the index:
+problem. We can fix that glitch by "unstaging" `A.rst` and putting
+`A.rst` back in the index:
 
 ```
-git reset HEAD foo.rst
-git add foo.rst
+git reset HEAD A.rst
+git add A.rst
 ```
 
 The final step is to make sure all of the tagged regions are
@@ -301,7 +301,7 @@ the project.
 
 ```
 dtags check
-git add bar.rst
+git add B.rst
 git commit -m "Changed foo_summary per VP of Marketing"
 git push
 ```

@@ -40,17 +40,17 @@ The `dtags` command has subcommands. These are:
       print       Prints the contents of tagged regions
       help        Prints help for any of these commands
 
-## `dtags check` 
+## dtags check
 
 Usage:
 ```
   dtags check [(<regexp> | "--") [<topic> [<topic2>]]]
 ```
-The dtags check command lists tags with multiple (inconsistent)
+The `dtags check` command lists tags with multiple (inconsistent)
 definitions. If <regexp> is given, only tags whose names match
-<regexp> are checked. dtags uses Ruby regex syntax, but it assumes
-that /^ .. $/ is the context. For example, use 'foo.*' to select tags
-that start with the 'foo'. The value -- can be used as a placeholder
+<regexp> are checked. `dtags` uses Ruby regex syntax, but it assumes
+that `/^ .. $/` is the context. For example, use `"foo.*"` to select tags
+that start with the "foo". The value `--` can be used as a placeholder
 if no regex is needed.
 
 <topic>, if given, limits the check to tag names that match regexp and
@@ -87,22 +87,22 @@ Inconsistent tagged regions:
   foo_summary 5a93da7 bar.rst:3
 ```
 
-## `dtags replicate`
+## dtags replicate
 
 Usage: 
 ```
   dtags replicate (<regexp> | "--") <topic> [<topic2>]
 ```
 
-The dtags replicate command collects all tags matching <regexp> found
+The `dtags replicate` command collects all tags matching <regexp> found
 in <topic> and replaces the contents of those tags in all other topics
 (or just in <topic2>, if provided) with the corresponding text from
 <topic>.
 
 The <regexp> argument restricts replication to tags whose names match
 <regexp> instead of all tags. <regexp> uses the Ruby regex engine, but
-it assumes that /^ .. $/ is the context. For example, "foo.*" selects
-tags that start with the "foo". The value -- can be used as a
+it assumes that `/^ .. $/` is the context. For example, `"foo.*"` selects
+tags that start with the "foo". The value `--` can be used as a
 placeholder if no regex is needed.
 
 <topic> is a file name, with an optional line number given by
@@ -116,23 +116,24 @@ then the body of all foo tags in yourdoc.rst will be replaced with the
 text taken from the foo tag located in mydoc.rst at line 43.
 
 Note: <topic> and <topic2> cannot name the same file in the current
-version of the tool. If you've used the same tag inconsistently in a
+version of the tool. For now, if you've used the same tag inconsistently within a
 single file, you'll need to resolve the conflict by editing the file.
 
-## `dtags whereis`
+## dtags whereis
+
 Usage: 
 ```
   dtags whereis (<regexp> | "--") [<topic> [<topic2>]]
 ```
 
-The dtags 'whereis' command finds tags whose names match <regexp> and
+The `dtags whereis` command finds tags whose names match <regexp> and
 lists where they are used in the current directory, or just in
 <topic2>, if specified.
 
 If <regexp> is given, the command only considers tags whose names
 match <regexp> instead of all tags. <regexp> uses the Ruby regex
-engine, but it assumes that /^ .. $/ is the context. For example,
-"foo.*" selects tags that start with the "foo". The value -- can be
+engine, but it assumes that `/^ .. $/` is the context. For example,
+`"foo.*"` selects tags that start with the "foo". The value -- can be
 used as a placeholder if no regex is needed.
 
 The output shows tag name, tag version hash as well as the file name
@@ -141,42 +142,42 @@ and line number where each tagged region begins.
 <topic>, if given, limits the output to tags in <topic> that match
 <regexp>.
 
-## `dtags list`
+## dtags list
 
 Usage: 
 ```
   dtags list [(<regexp> | "--") [<topic> [<topic2>]]
 ```
-The dtags list command scans the current directory and subdirectory
+The `dtags list` command scans the current directory and subdirectory
 (or just <topic2>, if provided) and prints tag names that match
 <regexp>, possibly limiting them to tags found in <topic>.
 
 If <regexp> is given, the command only considers tags whose names
 match <regexp> instead of all tags. <regexp> uses the Ruby regex
-engine, but it assumes that /^ .. $/ is the context. For example,
-"foo.*" selects tags that start with the "foo". The value -- can be
+engine, but it assumes that `/^ .. $/` is the context. For example,
+`"foo.*"` selects tags that start with the "foo". The value -- can be
 used as a placeholder if no regex is needed.
 
 The results are in alphabetical order.
 
-## `dtags print` 
+## dtags print
 
 Usage: 
 ```
   dtags print (<regexp> | "--") [<topic> [<topic2>]]
 ```
 
-The dtags print command writes the contents of matching tags matching
+The `dtags print` command writes the contents of matching tags matching
 <regexp> and found in <topic>. The tagged regions to print are taken
 from all files or only from <topic2>, if given.
 
 If <regexp> is given, the command only considers tags whose names
 match <regexp> instead of all tags. <regexp> uses the Ruby regex
-engine, but it assumes that /^ .. $/ is the context. For example,
-"foo.*" selects tags that start with the "foo". The value -- can be
+engine, but it assumes that `/^ .. $/` is the context. For example,
+`"foo.*"` selects tags that start with the "foo". The value `--` can be
 used as a placeholder if no regex is needed.
 
-## `dtags help` 
+## dtags help
 
 Usage: 
 ```
