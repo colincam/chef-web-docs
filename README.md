@@ -18,10 +18,10 @@ The Chef docs team can normally merge pull requests within a day or two, unless 
 
 ## The next fastest way
 
-If your change involves edits to multiple topics, or if you contribute frequently, you'll want to fork this repo in GitHib, clone it on your workstation, and make pull requests from commits you push to your forked repo. To clone, use
+If your change involves edits to multiple topics, or if you contribute frequently, you'll want to fork this repo in GitHib, clone it on your workstation, and make pull requests from commits you push to your forked repo. After you fork using the GitHub web site, clone the forked repo with:
 
 ```bash
-    git clone https://github.com/chef/chef-web-docs.git
+    git clone https://github.com/<your-github-id>/chef-web-docs.git
 ```
 
 Before submitting a PR, run the shell command `make master` to check for errors and build a local version of the doc set in html for testing. The docs build in a minute or two. To view the local version you built, open the file `build/index.html` in your browser.
