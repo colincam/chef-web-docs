@@ -49,19 +49,9 @@ Using include files for structured content starts innocently enough.
 
 It quickly becomes difficult. Include files can themselves be included
 in other include files. The number of include statements can
-proliferate to the point of being unmanageable. 
-
-For example, if you make a change to an include file, it can be very
-tricky to figure out what the consequences of that change might be. In
-fact, many of us have even seen warnings like this at the top of
-include files:
-
-```rst
-.. The contents of this file may be included in multiple topics 
-   (using the includes directive).
-.. The contents of this file should be modified in a way that preserves
-   its ability to appear in multiple topics.
-```
+proliferate to the point of being unmanageable. If you make a change
+to an include file, it can be very tricky to figure out what the
+consequences of that change might be.
 
 Systems for structured content that are based on include files were
 originally created with the assumption that a dedicated team of
