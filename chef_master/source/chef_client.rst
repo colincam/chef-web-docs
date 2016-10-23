@@ -1,6 +1,7 @@
 =====================================================
 chef-client
 =====================================================
+`[edit on Github] <https://github.com/colincam/chef-web-docs/edit/cc/xform3/chef_master/source/chef_client.rst>`_
 
 .. tag chef_client_summary
 
