@@ -25,20 +25,11 @@ source language, check out these
 When you're done editing, press the "Propose file change" button at
 the bottom of the page and confirm your pull request. The CI system
 will do some checks and add an comment to your PR with the results.
-If the CI system complains about a missing
-[DCO statement](https://docs.chef.io/community_contributions.html#developer-certification-of-origin-dco),
-you can ignore the message. We don't require DCO for contributions to
-docs, but the bot that checks for DCO statements currently runs on all
-Chef repos, including this one. Adding a DCO statement is a good thing
-to do anyway, which just means using the `-s` option to git commit
-commands, or adding a line to your commit message that has this
-format: `Signed-off-by: Your Name <you@xxx.xx>` (substituting your own
-information).
 
 The Chef docs team can normally merge pull requests within a day or
 two. We'll fix build errors before we merge, so you don't have to
-worry about passing all of the CI checks. (The important part is
-submitting your change.)
+worry about passing all of the CI checks, but it might add an extra
+few days. The important part is submitting your change.
 
 ## The next fastest way
 
