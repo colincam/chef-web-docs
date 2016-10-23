@@ -24,7 +24,7 @@ source language, check out these
 
 When you're done editing, press the "Propose file change" button at
 the bottom of the page and confirm your pull request. The CI system
-will do some checks and add an comment to your PR with the results.
+will do some checks and add a comment to your PR with the results.
 
 The Chef docs team can normally merge pull requests within a day or
 two. We'll fix build errors before we merge, so you don't have to
@@ -41,7 +41,7 @@ interface, clone the forked repo to your workstation, following these [instructi
 
 After making your changes but before submitting a PR, run the shell
 command `make master` to check for errors and build a local version of
-the doc set in html for testing. The docs build in a minute or two. To
+the doc set in HTML for testing. The docs build in a minute or two. To
 view the local version you built, open the file `build/index.html` in
 your browser.
 
@@ -58,8 +58,7 @@ depending on your system.
 
 If you need tips on the source language for the docs, check out the
 [instructions](https://docs.chef.io/style_guide.html). We use a subset
-of [restructuredText](https://docs.chef.io/style_guide.html) that's
-similar in scope to markdown.
+of restructuredText that's similar in scope to markdown.
 
 ## Tagged regions
 
@@ -72,7 +71,7 @@ visible inline and therefore easier to edit.
 For more information about how tagged regions work and how our new
 `dtags` tool helps manage them, see the
 [`dtags` README file](doctools/dtags_readme.md) and
-[`dtags` reference](doctools/dtags_help.md).
+[`dtags` help](doctools/dtags_help.md).
 
 ## Sending feedback
 
