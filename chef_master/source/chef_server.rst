@@ -8,6 +8,4 @@ The Chef server acts as a hub for configuration data. The Chef server stores coo
 
 .. end_tag
 
-.. 
-.. This page currently redirects to server_components.rst
-.. 
+
